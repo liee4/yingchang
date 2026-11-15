@@ -1,0 +1,10 @@
+web/data/
+web/dist/
+**/node_modules/
+cpp/documentaries.txt
+cpp/reviews.txt
+*.tmp
+*.exe
+*.obj
+*.pdb
+.env*

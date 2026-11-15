@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#151411" />
+    <title>映场</title>
+    <link rel="icon" type="image/webp" href="./icons/brand-mark.webp" />
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#/">
+        <img class="brand-mark" src="./icons/brand-mark.webp" width="25" height="14" alt="" />
+        <span class="brand-name">映场</span>
+      </a>
+      <nav class="navigation" aria-label="主导航" hidden>
+        <a href="#/catalog" id="nav-catalog">片目</a>
+        <a href="#/ranking" id="nav-ranking">榜单</a>
+      </nav>
+      <div class="header-actions">
+        <div class="search" id="search" hidden>
+          <span class="icon icon-search" aria-hidden="true"></span>
+          <input id="search-title" type="search" placeholder="搜索片名" aria-label="搜索片名" />
+        </div>
+        <button class="quiet-button role-exit" id="role-exit" type="button" hidden></button>
+      </div>
+    </header>
+    <main class="content" id="content" tabindex="-1"></main>
+    <script type="module" src="./src/app.js"></script>
+  </body>
+</html>
