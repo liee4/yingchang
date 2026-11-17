@@ -1,5 +1,6 @@
 #include "reviews.h"
 #include "text_file.h"
+#include "record_codec.h"
 
 #include <algorithm>
 #include <sstream>
@@ -7,6 +8,8 @@
 #include <utility>
 
 namespace {
+
+constexpr int contentScoreWeight = 2;
 
 auto findReview(const std::vector<Review>& reviews, const Review& target)
 {
@@ -22,26 +25,35 @@ bool hasValidScores(const Review& review)
 
 bool readReview(const std::string& line, std::vector<Review>& reviews)
 {
+    const auto trimmed = trimText(line);
+    if (!trimmed.empty() && trimmed.front() == '{') {
+        try {
+            auto review = reviewFromJson(Json::parse(line));
+            if (findReview(reviews, review) != reviews.end()) return false;
+            reviews.push_back(std::move(review));
+            return true;
+        } catch (const std::exception&) { return false; }
+    }
     Review review;
     std::istringstream input(line);
     if (!(input >> review.documentaryId >> review.content >> review.image >> review.narration)
         || !readQuotedText(input, review.viewerId) || !readQuotedText(input, review.comment)) {
         return false;
     }
+    review.viewerId = trimText(review.viewerId);
     input >> std::ws;
     if (!input.eof() || isBlank(review.viewerId) || !hasValidScores(review)
         || findReview(reviews, review) != reviews.end()) {
         return false;
     }
-    reviews.push_back(std::move(review));
+    try { reviews.push_back(normalizeReview(review)); }
+    catch (const std::exception&) { return false; }
     return true;
 }
 
 void writeReview(std::ostream& output, const Review& review)
 {
-    output << review.documentaryId << ' ' << review.content << ' ' << review.image << ' '
-           << review.narration << ' ' << std::quoted(review.viewerId) << ' '
-           << std::quoted(review.comment) << '\n';
+    output << reviewToJson(review).dump() << '\n';
 }
 
 bool ranksBefore(const RankingEntry& left, const RankingEntry& right)
@@ -62,26 +74,34 @@ struct ScoreTotal {
 
 }  // namespace
 
-Reviews::Reviews(std::filesystem::path path) : path_(std::move(path))
+Reviews::Reviews(std::filesystem::path path, bool persistChanges)
+    : path_(std::move(path)), persistChanges_(persistChanges)
 {
 }
 
-void Reviews::load(const DocumentaryCatalog& catalog)
+std::size_t Reviews::load(const DocumentaryCatalog& catalog)
 {
     auto loaded = loadRecords<Review>(path_, readReview);
+    if (!loaded.empty() && !catalog.dataFileExists()) {
+        throw std::runtime_error("片目数据文件缺失，已保留评价文件。请恢复片目文件后重启。");
+    }
+    const auto originalCount = loaded.size();
     const auto orphaned = std::remove_if(loaded.begin(), loaded.end(), [&catalog](const Review& review) {
         return !catalog.findById(review.documentaryId);
     });
     if (orphaned != loaded.end()) {
+        if (!persistChanges_) throw std::runtime_error("评价关联的片目不存在，原文件已保留。");
         loaded.erase(orphaned, loaded.end());
         PendingTextFile file(path_, loaded, writeReview);
         file.commit();
     }
     reviews_.swap(loaded);
+    return originalCount - reviews_.size();
 }
 
-void Reviews::submit(const Review& review, const DocumentaryCatalog& catalog)
+void Reviews::submit(const Review& input, const DocumentaryCatalog& catalog)
 {
+    Review review = normalizeReview(input);
     if (!catalog.findById(review.documentaryId)) {
         throw std::invalid_argument("找不到片目编号。");
     }
@@ -96,8 +116,10 @@ void Reviews::submit(const Review& review, const DocumentaryCatalog& catalog)
     } else {
         *(updated.begin() + (previous - reviews_.cbegin())) = review;
     }
-    PendingTextFile file(path_, updated, writeReview);
-    file.commit();
+    if (persistChanges_) {
+        PendingTextFile file(path_, updated, writeReview);
+        file.commit();
+    }
     reviews_.swap(updated);
 }
 
@@ -112,6 +134,11 @@ void Reviews::removeDocumentary(int id, DocumentaryCatalog& catalog)
         return;
     }
     updated.erase(related, updated.end());
+    if (!persistChanges_) {
+        catalog.remove(id);
+        reviews_.swap(updated);
+        return;
+    }
     PendingTextFile file(path_, updated, writeReview);
     catalog.remove(id);
     reviews_.swap(updated);
@@ -135,7 +162,14 @@ bool isValidScore(int score)
 
 long double reviewScore(const Review& review)
 {
-    return (2 * review.content + review.image + review.narration) / 4.0L;
+    return (contentScoreWeight * review.content + review.image + review.narration)
+           / static_cast<long double>(contentScoreWeight + 2);
+}
+
+std::string scoreFormula()
+{
+    return "（" + std::to_string(contentScoreWeight) + " × 内容分 + 画面分 + 讲解分）÷ "
+           + std::to_string(contentScoreWeight + 2);
 }
 
 std::vector<RankingEntry> buildRanking(const DocumentaryCatalog& catalog, const Reviews& reviews,

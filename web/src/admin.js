@@ -1,5 +1,5 @@
-import { parseCutoffs, scoreDistribution, scoreReview } from "./catalog.js";
 import { escapeHtml as html, poster, request, updateCatalog } from "./ui.js";
+import { filmEditor, bindFilmEditor, readFilmEditor } from './film-editor.js';
 
 const tabs = [
   ["films", "片目管理"], ["reviews", "全部评价"], ["distribution", "评分分布"],
@@ -7,62 +7,6 @@ const tabs = [
 const textFields = [
   ["title", "片名", 120], ["category", "类别", 50], ["director", "导演", 120], ["crew", "主创", 200],
 ];
-
-export function showRoleSelect(main, notice = "") {
-  main.innerHTML = `
-    <section class="entry">
-      <h1>选择登录身份</h1>
-      ${notice ? `<p class="entry-notice" role="status">${html(notice)}</p>` : ""}
-      <div class="role-grid">
-        <a class="role-card" href="#/admin/login">
-          <strong>管理员登录</strong>
-          <span>维护片目、查看评价和评分分布</span>
-          <span class="icon icon-arrow" aria-hidden="true"></span>
-        </a>
-        <a class="role-card" href="#/catalog">
-          <strong>观众登录</strong>
-          <span>浏览片目、评分和查看榜单</span>
-          <span class="icon icon-arrow" aria-hidden="true"></span>
-        </a>
-      </div>
-    </section>`;
-}
-
-export function showAdminLogin(main, onSuccess, onLocked) {
-  main.innerHTML = `
-    <section class="entry login">
-      <a class="back-link" href="#/"><span class="icon icon-arrow" aria-hidden="true"></span>返回身份选择</a>
-      <h1>管理员登录</h1>
-      <form class="field-stack">
-        <label for="admin-account">管理员账号</label>
-        <input id="admin-account" name="account" autocomplete="username" required>
-        <label for="admin-password">密码</label>
-        <input id="admin-password" name="password" type="password" autocomplete="current-password" required>
-        <button class="submit" type="submit">登录</button>
-        <p class="form-status" role="status"></p>
-      </form>
-    </section>`;
-  const form = main.querySelector("form");
-  form.addEventListener("submit", async (event) => {
-    event.preventDefault();
-    const submit = form.querySelector("button");
-    const status = form.querySelector("[role=status]");
-    submit.disabled = true;
-    try {
-      await request("admin/login", "POST", Object.fromEntries(new FormData(form)));
-      onSuccess();
-    } catch (error) {
-      if (error.remaining === 0) onLocked();
-      else if (error.remaining !== undefined) {
-        status.textContent = `${error.message} 剩余 ${error.remaining} 次尝试。`;
-        form.elements.password.value = "";
-        form.elements.password.focus();
-      } else status.textContent = "暂时无法登录，请重试。";
-    } finally {
-      submit.disabled = false;
-    }
-  });
-}
 
 function adminTable(headers, rows, empty) {
   return `<div class="table-scroll"><table class="admin-table">
@@ -75,9 +19,8 @@ function action(label, type, id) {
   return `<button class="quiet-button" type="button" data-action="${type}" data-id="${id}">${label}</button>`;
 }
 
-function filmTable(films, query) {
-  const matches = films.filter((film) => film.title.toLowerCase().includes(query) || String(film.id).includes(query));
-  const rows = matches.map((film) => `<tr>
+function filmTable(films) {
+  const rows = films.map((film) => `<tr>
     <td class="numeric">${film.id}</td>
     <td><span class="ranking-film">${poster(film, "admin-cover", false)}<strong>${html(film.title)}</strong></span></td>
     <td>${html(film.category || "—")}</td><td class="numeric">${film.episodes}</td>
@@ -90,50 +33,34 @@ function reviewTable({ films, reviews }) {
   const titles = new Map(films.map(({ id, title }) => [id, title]));
   const rows = reviews.map((review) => `<tr>
     <td>${html(titles.get(review.filmId))}<small>片号 ${review.filmId}</small></td>
-    <td>${html(review.viewerId)}</td>
+    <td>${html(review.viewerId)}${review.isSample ? ' <span class="sample-label">演示</span>' : ""}</td>
     <td class="numeric">${review.content}</td><td class="numeric">${review.image}</td><td class="numeric">${review.narration}</td>
-    <td class="numeric rating">${scoreReview(review).toFixed(2)}</td><td class="comment-cell">${html(review.comment || "—")}</td>
+    <td class="numeric rating">${review.overallScore.toFixed(2)}</td><td class="comment-cell">${html(review.comment || "—")}</td>
+    <td class="row-actions">${review.comment ? `<button class="quiet-button" type="button" data-action="clear-comment" data-id="${review.filmId}" data-viewer="${html(review.viewerId)}">删除短评</button>` : ""}</td>
   </tr>`).join("");
-  return adminTable(["片名", "观众编号", "内容", "画面", "讲解", "综合分", "短评"], rows, "暂无评价。");
+  return adminTable(["片名", "观众编号", "内容", "画面", "讲解", "综合分", "短评", "操作"], rows, "暂无评价。");
 }
 
-function distributionTable({ films, reviews }, cutoffs) {
-  const bounds = [1, ...cutoffs, 5];
-  const labels = cutoffs.map((cutoff, index) => `[${bounds[index]}, ${cutoff})`);
-  labels.push(`[${bounds.at(-2)}, 5]`);
-  const counts = scoreDistribution(films, reviews, cutoffs);
-  const rows = films.map((film) => `<tr><td class="numeric">${film.id}</td><td>${html(film.title)}</td>
-    ${counts.get(film.id).map((count) => `<td class="numeric">${count}</td>`).join("")}
+function distributionTable({ rows: records, labels }) {
+  const rows = records.map((film) => `<tr><td class="numeric">${film.filmId}</td><td>${html(film.title)}</td>
+    ${film.counts.map((count) => `<td class="numeric">${count}</td>`).join("")}
   </tr>`).join("");
   return adminTable(["片号", "片名", ...labels], rows, "暂无片目。");
 }
 
-function filmDialog(film) {
-  const editing = Boolean(film);
-  return `
-    <h2 id="admin-dialog-title">${editing ? "修改片目" : "新增片目"}</h2>
-    <form class="field-stack">
-      <div class="field-grid">
-        <label>片目编号<input name="id" type="number" step="1" value="${editing ? film.id : ""}" ${editing ? "readonly" : "required"}></label>
-        <label>集数<input name="episodes" type="number" min="1" step="1" value="${editing ? film.episodes : ""}" required></label>
-      </div>
-      ${textFields.map(([field, label, limit]) => `
-        <label>${label}<input name="${field}" maxlength="${limit}" value="${html(film?.[field])}" ${field === "title" ? "required" : ""}></label>
-      `).join("")}
-      <label>简介<textarea name="synopsis" maxlength="1200" rows="3">${html(film?.synopsis)}</textarea></label>
-      <p class="form-status" role="status"></p>
-      <div class="dialog-actions">
-        <button class="quiet-button" type="button" data-close>取消</button>
-        <button class="submit" type="submit">保存片目</button>
-      </div>
-    </form>`;
+function distributionChart({labels, totals, percentages, total, sampleCount}) {
+  return `<section class="distribution-chart" aria-label="全部评价的综合分分布"><h2>综合分分布 <small>${total} 条评价</small></h2>
+    <p class="field-hint">含 ${sampleCount} 条演示评价，全部参与统计。下表可逐片核对。</p>
+    ${labels.map((label, i) => `<div class="distribution-band"><span>${html(label)}</span><div class="band-track"><div style="width:${percentages[i]}%"></div></div><strong>${totals[i]} <small>(${percentages[i].toFixed(1)}%)</small></strong></div>`).join('')}</section>`;
 }
 
 function filmDetails(film) {
   return `<h2 id="admin-dialog-title">${html(film.title)}</h2>
     <dl class="film-fields">
       ${[["片目编号", film.id], ["集数", film.episodes], ...textFields.slice(1).map(([field, label]) => [label, film[field]]),
-        ["简介", film.synopsis]].map(([label, value]) => `<dt>${label}</dt><dd>${html(value || "—")}</dd>`).join("")}
+        ["原名", film.originalTitle], ["年份", film.year], ["地区", film.region], ["语言", film.language], ["单集时长", film.duration],
+        ["一句话推荐", film.tagline], ["简介", film.synopsis], ["看点", film.highlights?.join('；')], ["分集", film.chapters?.join('；')],
+        ["来源", film.sources?.map(s => s.label + '：' + s.url).join('；')]].map(([label, value]) => `<dt>${label}</dt><dd>${html(value || "—")}</dd>`).join("")}
     </dl>
     <div class="dialog-actions"><button class="quiet-button" type="button" data-close>关闭</button></div>`;
 }
@@ -141,7 +68,7 @@ function filmDetails(film) {
 export function mountAdmin(main, state, onSessionExpired) {
   main.innerHTML = `
     <section class="admin-shell">
-      <div class="admin-heading"><h1>管理员后台</h1></div>
+      <div class="admin-heading"><h1>管理员后台</h1><button class="quiet-button" type="button" id="backup-data">备份全部数据</button></div>
       <div class="admin-tabs" role="group" aria-label="后台功能">
         ${tabs.map(([id, label]) => `<button data-tab="${id}" aria-pressed="${id === "films"}">${label}</button>`).join("")}
       </div>
@@ -154,9 +81,37 @@ export function mountAdmin(main, state, onSessionExpired) {
   const dialog = shell.querySelector("dialog");
   const status = shell.querySelector("#admin-status");
   let query = "";
+  let searchSequence = 0;
+  shell.querySelector('#backup-data').addEventListener('click', async event => {
+    const button = event.currentTarget; button.disabled = true; status.textContent = '正在备份片目、评价与账号…';
+    try { const result = await request('admin/backup', 'POST'); status.textContent = `备份完成：${result.films} 部影片、${result.reviews} 条评价及账号。保存位置：${result.directory}`; }
+    catch(error) { status.textContent = error.message; } finally { button.disabled = false; }
+  });
 
-  function renderFilmTable() {
-    panel.querySelector("#film-table").innerHTML = filmTable(state.films, query.toLowerCase().trim());
+  async function renderFilmTable() {
+    const sequence = ++searchSequence;
+    try {
+      const { filmIds } = await request(`search?scope=admin&query=${encodeURIComponent(query)}`);
+      if (sequence !== searchSequence || !panel.querySelector("#film-table")) return;
+      const byId = new Map(state.films.map(f => [f.id, f]));
+      panel.querySelector("#film-table").innerHTML = filmTable(filmIds.map(id => byId.get(id)).filter(Boolean));
+    } catch (error) { if (shell.isConnected) status.textContent = error.message; }
+  }
+
+  async function renderDistribution(form) {
+    const result = panel.querySelector("#distribution-table");
+    const submit = form.querySelector("button[type=submit]");
+    const message = form.querySelector("[role=status]");
+    submit.disabled = true;
+    message.textContent = '正在统计…';
+    try {
+      const data = await request("admin/distribution", "POST", { cutoffs: form.elements.cutoffs.value });
+      if (panel.contains(result)) result.innerHTML = distributionChart(data) + distributionTable(data);
+      message.textContent = "统计已更新。";
+    } catch (error) {
+      if (error.status === 401) onSessionExpired();
+      else message.textContent = error.message;
+    } finally { submit.disabled = false; }
   }
 
   function renderTab(tab) {
@@ -185,25 +140,19 @@ export function mountAdmin(main, state, onSessionExpired) {
           <p class="field-hint">例如输入 3 4，统计 1 到 3、3 到 4、4 到 5 三段。边界分数归后一段。</p>
           <p class="form-status" role="status"></p>
         </form>
-        <div id="distribution-table">${distributionTable(state, [3, 4])}</div>`;
+        <div id="distribution-table"></div>`;
       panel.querySelector("form").addEventListener("submit", (event) => {
         event.preventDefault();
-        const form = event.currentTarget;
-        const result = panel.querySelector("#distribution-table");
-        const message = form.querySelector("[role=status]");
-        try {
-          result.innerHTML = distributionTable(state, parseCutoffs(form.elements.cutoffs.value));
-          message.textContent = "";
-        } catch (error) {
-          message.textContent = error.message;
-        }
+        renderDistribution(event.currentTarget);
       });
+      renderDistribution(panel.querySelector("form"));
     }
   }
 
   async function runMutation(form, path, method, payload, success) {
     const submit = form.querySelector("[type=submit]");
     submit.disabled = true;
+    form.querySelector('[role=status]').textContent = '正在保存…';
     try {
       updateCatalog(state, await request(path, method, payload));
       dialog.close();
@@ -221,13 +170,34 @@ export function mountAdmin(main, state, onSessionExpired) {
     }
   }
 
-  shell.addEventListener("click", (event) => {
+  shell.addEventListener("click", async (event) => {
     const button = event.target.closest("button");
     if (!button) return;
     if (button.hasAttribute("data-close")) return dialog.close();
     if (button.dataset.tab) return renderTab(button.dataset.tab);
     const action = button.dataset.action;
     if (!action) return;
+    if (action === "clear-comment") {
+      button.disabled = true;
+      try {
+        const data = await request("admin/reviews/comment", "DELETE", {
+          filmId: Number(button.dataset.id), viewerId: button.dataset.viewer,
+        });
+        if (!main.contains(shell)) return;
+        updateCatalog(state, data);
+        if (panel.contains(button)) {
+          renderTab("reviews");
+          shell.querySelector('[data-tab="reviews"]').focus();
+        }
+        status.textContent = "短评已删除，评分已保留。";
+      } catch (error) {
+        if (error.status === 401) onSessionExpired();
+        else status.textContent = error.message;
+      } finally {
+        button.disabled = false;
+      }
+      return;
+    }
     const film = state.films.find(({ id }) => id === Number(button.dataset.id));
     if (action !== "add" && !film) return;
 
@@ -247,12 +217,12 @@ export function mountAdmin(main, state, onSessionExpired) {
         runMutation(form, `admin/films/${film.id}`, "DELETE", undefined, "片目及关联评价已删除。");
       });
     } else {
-      dialog.innerHTML = filmDialog(film);
+      dialog.innerHTML = filmEditor(film, state.films);
       const form = dialog.querySelector("form");
+      bindFilmEditor(form, state.films);
       form.addEventListener("submit", (event) => {
         event.preventDefault();
-        const data = Object.fromEntries(new FormData(form));
-        const payload = { ...data, id: form.elements.id.valueAsNumber, episodes: form.elements.episodes.valueAsNumber };
+        const payload = readFilmEditor(form);
         if (film) runMutation(form, `admin/films/${film.id}`, "PATCH", payload, "片目已修改。");
         else runMutation(form, "admin/films", "POST", payload, "片目已新增。");
       });

@@ -1,0 +1,1262 @@
+{
+  "contentEdition": 2,
+  "films": [
+    {
+      "posterId": 1,
+      "artworkKind": "主题插画",
+      "id": 101,
+      "title": "蓝色星球 II",
+      "originalTitle": "Blue Planet II",
+      "category": "自然",
+      "year": 2017,
+      "region": "英国",
+      "language": "英语",
+      "duration": "约 58 分钟 / 集",
+      "episodes": 7,
+      "director": "分集导演制（导演名单待核实）",
+      "crew": "BBC 自然历史制作团队；系列制片人：Mark Brownlow；执行制片人：James Honeyborne；讲述：David Attenborough",
+      "tagline": "潜入海面之下，重新认识地球上最大的生命空间。",
+      "synopsis": "海洋里的生存故事，发生在明亮的珊瑚礁，也发生在阳光无法抵达的深处。这部系列把摄影机带进不同海域，观察鱼类、海鸟和海洋哺乳动物怎样寻找食物、合作与繁衍，呈现熟悉的海面之下不易察觉的生命联系。\n\n节目将深海探测与动物行为观察结合起来：极端压力、寒冷和黑暗没有让生命消失，反而形成了独特的生存策略。观看时既可以留意水下摄影的细节，也可以思考海洋环境与人类生活之间的关系。",
+      "highlights": [
+        "从热带浅海到深海，比较不同海域的生存条件。",
+        "留意动物协作与捕食行为，以及镜头如何组织这些故事。",
+        "将自然奇观与海洋保护问题联系起来。"
+      ],
+      "chapters": [
+        "One Ocean · 同一片海洋",
+        "The Deep · 深海",
+        "Coral Reefs · 珊瑚礁",
+        "Big Blue · 远洋"
+      ],
+      "sources": [
+        {
+          "label": "BBC Earth 节目资料",
+          "url": "https://www.bbcearth.com/shows/blue-planet-ii"
+        },
+        {
+          "label": "Television Academy · 制片署名",
+          "url": "https://www.televisionacademy.com/shows/blue-planet-ii"
+        }
+      ],
+      "styles": [
+        "风光长镜",
+        "细节特写"
+      ]
+    },
+    {
+      "posterId": 6,
+      "artworkKind": "主题插画",
+      "id": 102,
+      "title": "地球脉动 II",
+      "originalTitle": "Planet Earth II",
+      "category": "自然",
+      "year": 2016,
+      "region": "英国",
+      "language": "英语",
+      "duration": "约 58 分钟 / 集",
+      "episodes": 6,
+      "director": "分集导演制（导演名单待核实）",
+      "crew": "BBC 自然历史制作团队；系列制片人：Tom Hugh-Jones；执行制片人：Michael Gunton；讲述：David Attenborough",
+      "tagline": "把视线放低，走进动物自己的世界。",
+      "synopsis": "从远离大陆的岛屿，到险峻山地、繁茂丛林和干旱沙漠，影片围绕不同栖息地展开。摄影机贴近动物的活动范围，让捕食、求偶、迁徙和育幼成为一段段有起伏的生命故事，也让观众感受到环境对行为的塑造。\n\n这部作品的吸引力不只在于广阔风景，更在于接近动物视角的观察方式。同样是寻找食物，在山地、林下和城市里会遇到完全不同的限制；把各集放在一起看，可以比较物种如何适应环境变化。",
+      "highlights": [
+        "观察岛屿、山地、丛林与沙漠中不同的生存策略。",
+        "关注近距离跟拍、声音与剪辑怎样建立临场感。",
+        "从动物视角理解栖息地的重要性。"
+      ],
+      "chapters": [
+        "Islands · 岛屿",
+        "Mountains · 山脉",
+        "Jungles · 丛林",
+        "Deserts · 沙漠"
+      ],
+      "sources": [
+        {
+          "label": "BBC Earth 节目资料",
+          "url": "https://www.bbcearth.com/shows/planet-earth-ii"
+        },
+        {
+          "label": "Television Academy · 制片署名",
+          "url": "https://www.televisionacademy.com/shows/planet-earth-ii"
+        }
+      ],
+      "styles": [
+        "风光长镜",
+        "细节特写"
+      ]
+    },
+    {
+      "posterId": 103,
+      "artworkKind": "官方节目宣传图",
+      "id": 103,
+      "title": "我们的星球 · 第一季",
+      "originalTitle": "Our Planet",
+      "category": "自然",
+      "year": 2019,
+      "region": "英国",
+      "language": "英语",
+      "duration": "约 48—54 分钟 / 集",
+      "episodes": 8,
+      "director": "Adam Chapman、Mandi Stark、Jeff Wilson、Sophie Lanfear、Hugh Pearson、Huw Cordey（分集导演）",
+      "crew": "Silverback Films；系列制片人：Alastair Fothergill、Keith Scholey；合作：WWF；讲述：David Attenborough",
+      "tagline": "从冰原到森林，看见不同生态系统之间的联系。",
+      "synopsis": "这部系列跨越多个大陆，以八集篇幅走访冰雪世界、雨林、沿海、草地、远洋、淡水和森林。镜头一面记录动物令人惊叹的行为，一面把它们放回完整的生态网络中，解释一处环境的变化为什么会影响其他生命。\n\n与单纯展示自然风景不同，影片持续追问栖息地正在经历什么。观众可以顺着水、食物与季节的变化，理解气候、资源和生物多样性的关联，也可以在不同集之间寻找相似的保护难题。",
+      "highlights": [
+        "八种观察方向覆盖海洋、陆地与淡水环境。",
+        "比较自然之美与栖息地变化在叙事中的关系。",
+        "适合围绕生物多样性和环境保护展开讨论。"
+      ],
+      "chapters": [
+        "One Planet · 一个星球",
+        "Frozen Worlds · 冰冻世界",
+        "Jungles · 丛林",
+        "Coastal Seas · 沿海",
+        "From Deserts to Grasslands · 从沙漠到草原",
+        "The High Seas · 远洋",
+        "Fresh Water · 淡水",
+        "Forests · 森林"
+      ],
+      "sources": [
+        {
+          "label": "Netflix 官方节目与分集",
+          "url": "https://www.netflix.com/title/80049832"
+        },
+        {
+          "label": "Netflix 第一季制作资料",
+          "url": "https://about.netflix.com/en/news/sir-david-attenborough-voices-new-netflix-series-our-planet-1"
+        },
+        {
+          "label": "IDA · 2019 年提名制作名单",
+          "url": "https://www.documentary.org/sites/default/files/images/press-releases/IDA_PressRelease102319_AwardsNominees.pdf"
+        }
+      ],
+      "styles": [
+        "风光长镜",
+        "细节特写"
+      ]
+    },
+    {
+      "posterId": 9,
+      "artworkKind": "主题插画",
+      "id": 104,
+      "title": "冰冻星球 II",
+      "originalTitle": "Frozen Planet II",
+      "category": "自然",
+      "year": 2022,
+      "region": "英国",
+      "language": "英语",
+      "duration": "约 58 分钟 / 集",
+      "episodes": 6,
+      "director": "分集导演制（导演名单待核实）",
+      "crew": "BBC 自然历史制作团队；系列制片人：Elizabeth White；执行制片人：Mark Brownlow；讲述：David Attenborough",
+      "tagline": "严寒之中，生命仍在寻找自己的出路。",
+      "synopsis": "冰冻世界并不限于南北两极。高山、积雪森林、冰海与寒冷荒漠，同样是这部系列的观察对象。北极熊、企鹅、雪猴和西伯利亚虎面对不同的冰雪环境，各自发展出寻找食物、保存体力和照顾后代的办法。\n\n六集节目把壮阔景观与具体动物的处境放在一起。冰雪既是限制，也是庇护；当冻结与融化的节奏改变，原先有效的生存方式也会受到挑战。适合在欣赏摄影之外，进一步讨论环境变化如何进入动物的日常。",
+      "highlights": [
+        "认识极地之外的高山、冰海与雪林生态。",
+        "比较不同物种在低温环境中的适应方式。",
+        "留意冰雪变化怎样影响捕食与繁衍。"
+      ],
+      "chapters": [
+        "Frozen Worlds · 冰冻世界",
+        "Frozen Oceans · 冰冻海洋",
+        "Frozen Peaks · 冰封群峰",
+        "Frozen South · 冰冻南极"
+      ],
+      "sources": [
+        {
+          "label": "BBC Earth 节目资料",
+          "url": "https://www.bbcearth.com/shows/frozen-planet-2"
+        },
+        {
+          "label": "BBC Earth · 系列制片人访谈",
+          "url": "https://www.bbcearth.com/news/the-changing-face-of-our-frozen-worlds"
+        }
+      ],
+      "styles": [
+        "风光长镜",
+        "细节特写"
+      ]
+    },
+    {
+      "posterId": 105,
+      "artworkKind": "官方节目宣传图",
+      "id": 105,
+      "title": "航拍中国 · 第一季",
+      "category": "自然",
+      "year": 2017,
+      "region": "中国大陆",
+      "language": "汉语普通话",
+      "duration": "约 50 分钟 / 集",
+      "episodes": 6,
+      "director": "余乐等",
+      "crew": "中央电视台纪录频道；央视纪录国际传媒有限公司",
+      "tagline": "换一个高度，读懂山河与城市的纹理。",
+      "synopsis": "第一季以新疆、海南、黑龙江、陕西、江西和上海为六条观察路线，从空中重新辨认熟悉的中国。山脉、河流、海岸、农田与城市不再是彼此孤立的风景，而是在镜头移动中显现联系，地理知识也有了可感知的尺度。\n\n节目将自然地貌与人的生活并置：水如何塑造绿洲，河流怎样进入城市，季节又如何改变土地的颜色。观看时可以顺着镜头寻找路线，也可以比较不同地区的空间格局与生活方式，作为一次影像中的地理旅行。",
+      "highlights": [
+        "六个省级地区组成风貌各异的空中路线。",
+        "通过地貌、河流和聚落理解人与土地的关系。",
+        "观察航拍运动与解说如何解释空间。"
+      ],
+      "chapters": [
+        "新疆",
+        "海南",
+        "黑龙江",
+        "陕西",
+        "江西",
+        "上海"
+      ],
+      "sources": [
+        {
+          "label": "央视节目官网",
+          "url": "https://tv.cctv.com/2016/12/28/VIDALOmjxOZe51NjntPvOI00161228.shtml"
+        },
+        {
+          "label": "官方播出平台主创资料",
+          "url": "https://www.bilibili.com/bangumi/media/md28229730/"
+        }
+      ],
+      "styles": [
+        "风光长镜"
+      ]
+    },
+    {
+      "posterId": 106,
+      "artworkKind": "官方节目宣传图",
+      "id": 106,
+      "title": "第三极",
+      "category": "自然",
+      "year": 2015,
+      "region": "中国大陆",
+      "language": "汉语普通话",
+      "duration": "约 46 分钟 / 集",
+      "episodes": 6,
+      "director": "曾海若",
+      "crew": "《第三极》摄制组",
+      "tagline": "以青藏高原为背景，把镜头交给生活在那里的人。",
+      "synopsis": "青藏高原的山、水与草原构成影片的背景，真正串起故事的是人与动物、土地和传统之间的关系。节目通过救助野生动物、耕作、放牧等具体生活片段，呈现高原居民如何与环境相处，让自然风光具有人的温度。\n\n全片包含五集主题纪录和一集拍摄花絮。前五集从不同角度描绘生命与生活，第六集则回到摄影机背后，记录高海拔拍摄的挑战。它适合与纯动物纪录片对照观看，比较以人类活动为中心的自然叙事。",
+      "highlights": [
+        "近四十个故事呈现高原上的人与自然。",
+        "从传统生活与现代变化中理解地方文化。",
+        "第六集花絮展示高海拔拍摄的过程。"
+      ],
+      "chapters": [
+        "生命之伴",
+        "一方热土",
+        "高原之歌",
+        "上善之水",
+        "大山儿女",
+        "高原相遇（拍摄花絮）"
+      ],
+      "sources": [
+        {
+          "label": "央视节目官网",
+          "url": "https://tv.cctv.com/2015/03/24/VIDA1427188922462442.shtml"
+        }
+      ],
+      "styles": [
+        "风光长镜",
+        "纪实跟拍"
+      ]
+    },
+    {
+      "posterId": 107,
+      "artworkKind": "官方节目宣传图",
+      "id": 107,
+      "title": "舌尖上的中国 · 第一季",
+      "category": "美食",
+      "year": 2012,
+      "region": "中国大陆",
+      "language": "汉语普通话",
+      "duration": "约 50 分钟 / 集",
+      "episodes": 7,
+      "director": "陈晓卿（总导演）",
+      "crew": "中央电视台纪录频道；陈晓卿、任长箴等创作团队",
+      "tagline": "一餐一饭之间，藏着土地、手艺与家的记忆。",
+      "synopsis": "影片从食材的获取出发，逐步进入主食、发酵、储藏、厨房与田野。它关心一道食物如何形成，也关心谁在制作、谁在等待，以及不同地区的人怎样利用当地条件，把自然馈赠转化为日常生活。\n\n七集节目让食物成为观察中国的入口。季节、劳作、家庭与迁徙都可以通过味道被感知；精细的食物特写之外，人的选择与情感始终贯穿其中。适合边看边比较不同地区的饮食经验，也适合讨论纪录片如何通过细节传递乡愁。",
+      "highlights": [
+        "从采集、加工到餐桌，理解食物背后的劳作。",
+        "比较发酵、腌制与储藏等生活智慧。",
+        "观察食物镜头怎样与人物故事相互支撑。"
+      ],
+      "chapters": [
+        "自然的馈赠",
+        "主食的故事",
+        "转化的灵感",
+        "时间的味道",
+        "厨房的秘密",
+        "五味的调和",
+        "我们的田野"
+      ],
+      "sources": [
+        {
+          "label": "央视节目官网",
+          "url": "https://tv.cctv.com/2017/01/19/VIDAtIyRXSWBaJGZ1itGdZFE170119.shtml"
+        },
+        {
+          "label": "央视节目官网",
+          "url": "https://tv.cctv.com/2012/12/11/VIDA1355162565967728.shtml"
+        }
+      ],
+      "styles": [
+        "纪实跟拍",
+        "细节特写"
+      ]
+    },
+    {
+      "posterId": 108,
+      "artworkKind": "官方节目宣传图",
+      "id": 108,
+      "title": "寻味顺德",
+      "category": "美食",
+      "year": 2016,
+      "region": "中国大陆",
+      "language": "汉语普通话",
+      "duration": "约 50 分钟 / 集",
+      "episodes": 3,
+      "director": "刘硕、费牖明",
+      "crew": "《寻味顺德》摄制组",
+      "tagline": "从一座城市的餐桌，认识一方人的生活。",
+      "synopsis": "三集节目围绕顺德的乡土、手艺与传承展开，从当地的物产和日常饭菜进入人物生活。观众能看到美食制作中的细致功夫，也能看到手艺与家庭、谋生和地方认同之间的联系，理解为什么一种味道会被一代代保存。\n\n影片的观察范围集中在一座城市，因而能够把人与食物的关系讲得更具体。与跨地域的美食系列对照观看，可以比较不同叙事尺度的效果：一道菜既是技术的结果，也是当地人对生活的态度。",
+      "highlights": [
+        "以顺德为集中观察对象，兼顾物产与人物。",
+        "关注烹饪细节中的经验与工匠精神。",
+        "沿乡土、匠心和传承三条线理解地方风味。"
+      ],
+      "chapters": [
+        "乡土之源",
+        "匠心独运",
+        "美味相传"
+      ],
+      "sources": [
+        {
+          "label": "央视节目官网",
+          "url": "https://tv.cctv.com/2016/04/19/VIDAKPo5OpisU1jWG5erv6m7160419.shtml"
+        }
+      ],
+      "styles": [
+        "纪实跟拍",
+        "细节特写"
+      ]
+    },
+    {
+      "posterId": 109,
+      "artworkKind": "官方节目宣传图",
+      "id": 109,
+      "title": "茶，一片树叶的故事",
+      "category": "美食",
+      "year": 2013,
+      "region": "中国大陆",
+      "language": "汉语普通话",
+      "duration": "约 50 分钟 / 集",
+      "episodes": 6,
+      "director": "王冲霄",
+      "crew": "分集导演：孙戈霆、杨阳等；总撰稿：王旭峰",
+      "tagline": "跟随一片叶子的旅程，看见世界各地的茶与人。",
+      "synopsis": "从种茶、采茶与制茶，到运输、冲泡和分享，影片沿着茶的流动访问不同国家的茶人。茶园的自然条件、工艺的细微差别与饮茶习惯被放在同一条线索中，一片树叶因此成为连接劳动、贸易与文化的媒介。\n\n六集既呈现中国茶的多种形态，也观察茶在异乡形成的新生活方式。观看时可以留意手工技术怎样通过感官经验传承，也可以比较茶馆、茶席和家庭中的相处方式。它讲的不只是饮品，更是人们如何安排时间、建立关系。",
+      "highlights": [
+        "比较不同茶类的制作经验与手工细节。",
+        "沿传播路线认识多地饮茶文化。",
+        "从茶人的个人经历理解传统与生活选择。"
+      ],
+      "chapters": [
+        "土地和手掌的温度",
+        "路的尽头",
+        "烧水煮茶的事",
+        "他乡，故乡",
+        "时间为茶而停下",
+        "一碗茶汤见人情"
+      ],
+      "sources": [
+        {
+          "label": "央视《茶》官方专题",
+          "url": "https://jishi.cntv.cn/special/cha/index.shtml"
+        },
+        {
+          "label": "央视首映与主创资料",
+          "url": "https://jishi.cntv.cn/2013/11/12/ARTI1384249625593893.shtml"
+        }
+      ],
+      "styles": [
+        "风光长镜",
+        "纪实跟拍",
+        "细节特写"
+      ]
+    },
+    {
+      "posterId": 110,
+      "artworkKind": "官方节目宣传图",
+      "id": 110,
+      "title": "河西走廊",
+      "category": "历史",
+      "year": 2015,
+      "region": "中国大陆",
+      "language": "汉语普通话",
+      "duration": "约 50 分钟 / 集",
+      "episodes": 10,
+      "director": "王新建（总导演）、赵启辰（执行总导演）",
+      "crew": "中央电视台与甘肃省委宣传部联合出品；《河西走廊》摄制组",
+      "tagline": "沿一条走廊，回望丝路千年的相遇与变迁。",
+      "synopsis": "河西走廊连接中原与西域，既是一片具体的地理空间，也是一条人员、商品与思想往来的通道。影片以时间为线索，从使者出行、交通开拓和城镇发展，讲到宗教、艺术与普通人的命运，将区域历史放回更广阔的交流背景。\n\n十集节目结合实地风光与历史叙事，让遗址和地貌成为理解过去的入口。观看时可以关注地理条件如何影响交通与聚落，也可以比较不同阶段的人为什么来到这里、留下了什么，逐渐建立对丝绸之路的空间认识。",
+      "highlights": [
+        "以编年线索串联河西走廊的历史变化。",
+        "联系地理通道、文化交流与地方社会。",
+        "观察遗址实拍与历史场景再现的叙事作用。"
+      ],
+      "chapters": [
+        "使者",
+        "通道",
+        "驿站",
+        "根脉",
+        "造像",
+        "丝路",
+        "敦煌",
+        "会盟",
+        "苍生",
+        "宝藏"
+      ],
+      "sources": [
+        {
+          "label": "央视节目官网",
+          "url": "https://tv.cctv.com/2022/07/04/VIDAvNhIUgppFT0adfBhvj0M220704.shtml"
+        },
+        {
+          "label": "首播时期节目介绍",
+          "url": "https://www.gsau.edu.cn/info/1280/1389.htm"
+        },
+        {
+          "label": "人民网 · 主创采访",
+          "url": "https://paper.people.com.cn/hqrw/html/2016-10/26/content_1726905.htm"
+        }
+      ],
+      "styles": [
+        "风光长镜",
+        "细节特写"
+      ]
+    },
+    {
+      "posterId": 111,
+      "artworkKind": "官方节目宣传图",
+      "id": 111,
+      "title": "如果国宝会说话 · 第一季",
+      "category": "历史",
+      "year": 2018,
+      "region": "中国大陆",
+      "language": "汉语普通话",
+      "duration": "约 5 分钟 / 集",
+      "episodes": 25,
+      "director": "徐欢（总导演）",
+      "crew": "央视纪录频道；《如果国宝会说话》主创团队",
+      "tagline": "用五分钟，打开一件文物与一个时代。",
+      "synopsis": "第一季以二十五件文物为入口，将器形、纹样、文字与制造方式转化为理解古人的线索。节目把视线拉近到器物的细节，让观众从一只壶、一支骨笛或一件青铜器出发，思考早期社会如何表达信仰、秩序与审美。\n\n每集约五分钟，适合独立观看，也适合连起来比较。它将宏大的文明叙事拆成可触摸的对象：文物不只是被陈列的珍宝，也是曾被制作、使用和保存的物件。可以带着一个具体问题进入每集，再到官方专题继续查阅。",
+      "highlights": [
+        "短篇幅适合逐件认识文物，不必一次看完整季。",
+        "以局部特写理解器物造型与工艺。",
+        "将文物与古人的生活、观念联系起来。"
+      ],
+      "chapters": [
+        "人头壶",
+        "贾湖骨笛",
+        "陶鹰鼎",
+        "龙山蛋壳黑陶杯",
+        "红山玉龙"
+      ],
+      "sources": [
+        {
+          "label": "央视第一季专题与文物目录",
+          "url": "https://jishi.cctv.com/special/djsb/guobao/index.shtml"
+        },
+        {
+          "label": "央视第一季集数资料",
+          "url": "https://jishi.cctv.com/2018/05/18/ARTIECje4wBMs9vcNWK3DtLg180518.shtml"
+        }
+      ],
+      "styles": [
+        "细节特写"
+      ]
+    },
+    {
+      "posterId": 112,
+      "artworkKind": "官方节目宣传图",
+      "id": 112,
+      "title": "我在故宫修文物",
+      "category": "人文",
+      "year": 2016,
+      "region": "中国大陆",
+      "language": "汉语普通话",
+      "duration": "约 50 分钟 / 集",
+      "episodes": 3,
+      "director": "叶君、萧寒",
+      "crew": "故宫博物院文物修复工作者；纪录片摄制组",
+      "tagline": "走进修复室，看见文物背后的手艺与日常。",
+      "synopsis": "镜头进入故宫的文物修复工作空间，观察青铜器、钟表、木器、织绣与书画怎样被检查、修补和照料。文物从展柜中的成品回到工作台上的材料，修复者的手、工具与判断也随之成为故事的中心。\n\n这是一部三集电视纪录片，区别于同名电影版。节目既记录技术过程，也保留工作者的日常与师徒相处，让传承不再只是抽象的词语。观看时可以留意一项修复为何需要耐心，以及现代方法与传统经验如何共同服务于文物保护。",
+      "highlights": [
+        "认识钟表、青铜器、木器、织绣和书画等修复门类。",
+        "从工作节奏中理解技艺传承与职业选择。",
+        "本片收录三集电视版，避免与同名电影混淆。"
+      ],
+      "chapters": [
+        "第一集：青铜器、钟表与陶瓷修复",
+        "第二集：木器、漆器与织绣修复",
+        "第三集：书画修复、临摹与摹印"
+      ],
+      "sources": [
+        {
+          "label": "清华大学艺术博物馆放映与主创资料",
+          "url": "https://www.artmuseum.tsinghua.edu.cn/ggjy/ztjz_910/jzyy/202111/t20211119_16959.shtml"
+        },
+        {
+          "label": "央视节目官网",
+          "url": "https://tv.cctv.com/2015/12/30/VIDA1451462807578701.shtml"
+        }
+      ],
+      "styles": [
+        "纪实跟拍",
+        "细节特写"
+      ]
+    },
+    {
+      "posterId": 113,
+      "artworkKind": "官方节目宣传图",
+      "id": 113,
+      "title": "人生第一次",
+      "category": "人文",
+      "year": 2020,
+      "region": "中国大陆",
+      "language": "汉语普通话",
+      "duration": "约 30 分钟 / 集",
+      "episodes": 12,
+      "director": "秦博",
+      "crew": "央视网、上海广播电视台纪录片中心、bilibili 联合出品",
+      "tagline": "那些无法重来的人生节点，也连接着你我。",
+      "synopsis": "出生、上学、工作、结婚、退休与告别，构成许多人共同经历的人生节点。影片选择不同年龄和处境的普通人，通过持续观察记录他们面对第一次时的期待、犹疑和行动，把抽象的人生阶段还原为具体的生活现场。\n\n十二集从生命的开始走向生命的终点，但并不试图给出统一答案。人物如何与家人沟通、怎样承担责任、如何理解相守与离别，都是可以慢慢体会的内容。适合在放映后围绕成长、家庭与选择展开交流，也适合联系自己的生活经验观看。",
+      "highlights": [
+        "以普通人的经历呈现十二个人生节点。",
+        "关注持续观察如何保留真实生活的细节。",
+        "适合围绕成长、家庭和代际关系进行讨论。"
+      ],
+      "chapters": [
+        "出生",
+        "上学",
+        "长大",
+        "当兵",
+        "上班",
+        "结婚",
+        "进城",
+        "买房",
+        "相守",
+        "退休",
+        "养老",
+        "告别"
+      ],
+      "sources": [
+        {
+          "label": "央视节目官网",
+          "url": "https://tv.cctv.com/2020/05/21/VIDAonMbfGREx0Jpev2TInlB200521.shtml"
+        },
+        {
+          "label": "联合出品平台制作资料",
+          "url": "https://www.bilibili.com/bangumi/play/ep548360"
+        }
+      ],
+      "styles": [
+        "纪实跟拍"
+      ]
+    },
+    {
+      "posterId": 114,
+      "artworkKind": "官方节目宣传图",
+      "id": 114,
+      "title": "书简阅中国",
+      "category": "人文",
+      "year": 2021,
+      "region": "中国大陆",
+      "language": "汉语普通话",
+      "duration": "约 50 分钟 / 集",
+      "episodes": 6,
+      "director": "金铁木、戴修扬",
+      "crew": "中央广播电视总台纪录频道；《书简阅中国》创作团队",
+      "tagline": "拆开古人的信，也打开他们生活过的时代。",
+      "synopsis": "影片从三十封古代书信出发，围绕普通人、爱情、友谊、人生智慧、家风与家国六个主题展开。私人书写留下的语气、牵挂和愿望，让历史人物从事件与结论中走出来，也让观众看到大时代里具体的情感与选择。\n\n每集将五封书信放在同一主题下阅读，连接不同人物和时期。观看时可以思考私人文字与正式史书提供了哪些不同视角，也可以把信中的家庭关系、友情与责任感带回今天，理解跨越时间的相似与差异。",
+      "highlights": [
+        "以私人书信补充理解历史的视角。",
+        "六个主题帮助比较不同时代的人生处境。",
+        "适合把文字阅读与影像叙事结合起来观看。"
+      ],
+      "chapters": [
+        "小人物 大历史",
+        "是你告诉我 爱情的模样",
+        "再大的风 我都去接你",
+        "孤独的路 勇敢的心",
+        "千古栋梁有家风",
+        "留取丹心照汗青"
+      ],
+      "sources": [
+        {
+          "label": "央视节目官网",
+          "url": "https://tv.cctv.com/2021/02/08/VIDAHc9krezHR6EXJAq7w0nM210208.shtml"
+        },
+        {
+          "label": "中国文艺网 · 主创与内容介绍",
+          "url": "https://www.cflac.org.cn/new_ys/ysds/hd/202209/t20220923_1258871.html"
+        }
+      ],
+      "styles": [
+        "风光长镜",
+        "细节特写"
+      ]
+    },
+    {
+      "posterId": 115,
+      "artworkKind": "官方节目宣传图",
+      "id": 115,
+      "title": "超级工程 · 第一季",
+      "category": "科学",
+      "year": 2012,
+      "region": "中国大陆",
+      "language": "汉语普通话",
+      "duration": "约 50 分钟 / 集",
+      "episodes": 5,
+      "director": "李炳",
+      "crew": "中央电视台纪录频道；李炳、闫非等创作团队",
+      "tagline": "走到工程现场，看看复杂问题怎样被逐一解决。",
+      "synopsis": "港珠澳大桥、上海中心大厦、北京地铁网络、海上巨型风机和大型液化天然气运输船，是第一季的五个观察对象。影片记录这些项目建设时期的难题，把庞大结构拆解为设计、材料、施工与协同中的具体问题。\n\n航拍、水下摄影和图形演示帮助观众理解不易直接看见的部分，工程人员的工作又让技术具有现实尺度。观看时要注意节目记录的是当时的建设过程，可以沿着问题与解决方案理解工程逻辑，而非把片中进度视为今天的状态。",
+      "highlights": [
+        "五项工程分别涉及交通、建筑、能源和船舶。",
+        "通过实际难题理解设计取舍与施工约束。",
+        "留意图形解释与现场影像如何互相补充。"
+      ],
+      "chapters": [
+        "港珠澳大桥",
+        "上海中心大厦",
+        "北京地铁网络",
+        "海上巨型风机",
+        "超级 LNG 船"
+      ],
+      "sources": [
+        {
+          "label": "央视节目官网",
+          "url": "https://tv.cctv.com/2014/11/03/VIDA1415000730892868.shtml"
+        },
+        {
+          "label": "央视节目官网",
+          "url": "https://tv.cctv.com/2012/12/10/VIDA1355149961979490.shtml"
+        }
+      ],
+      "styles": [
+        "风光长镜",
+        "纪实跟拍",
+        "细节特写"
+      ]
+    },
+    {
+      "posterId": 116,
+      "artworkKind": "官方节目宣传图",
+      "id": 116,
+      "title": "神奇的嫦娥五号 · 电视版",
+      "category": "科学",
+      "year": 2023,
+      "region": "中国大陆",
+      "language": "汉语普通话",
+      "duration": "约 25 分钟 / 集",
+      "episodes": 4,
+      "director": "窦欣平（原系列；电视整合版署名待核实）",
+      "crew": "《神奇的嫦娥五号》制作团队",
+      "tagline": "跟随一次月球采样任务，理解发射、采集与返回。",
+      "synopsis": "这部电视版以发射升空、飞向月球、月面采样和返回地球四个阶段，梳理嫦娥五号任务。节目结合纪实画面与动画演示，解释运载火箭、推进系统、月面取样、无人交会对接和返回等环节如何配合完成一次复杂任务。\n\n它适合把抽象的航天名词放回任务流程中理解：一个阶段的结果，往往是下一个阶段能够开始的前提。观看时可以沿着时间顺序画出任务链条，再思考每个关键环节面临的条件与限制，建立对系统工程的直观认识。",
+      "highlights": [
+        "按任务流程理解探月工程，而不是孤立记忆名词。",
+        "纪实画面与动画共同解释关键技术。",
+        "此处收录央视四集电视版。"
+      ],
+      "chapters": [
+        "发射升空",
+        "飞向月球",
+        "月面采样",
+        "返回地球"
+      ],
+      "sources": [
+        {
+          "label": "央视节目官网",
+          "url": "https://tv.cctv.com/2023/11/24/VIDAej3ZbMMVw378YHrRtp1u231124.shtml"
+        },
+        {
+          "label": "影浪电影计划 · 导演履历",
+          "url": "https://www.sfilmmaker.com/fund/filminfo?id=49"
+        }
+      ],
+      "styles": [
+        "纪实跟拍",
+        "夜景光影"
+      ]
+    },
+    {
+      "posterId": 117,
+      "artworkKind": "官方节目宣传图",
+      "id": 117,
+      "title": "中国探月",
+      "category": "科学",
+      "year": 2024,
+      "region": "中国大陆",
+      "language": "汉语普通话",
+      "duration": "约 15 分钟 / 集",
+      "episodes": 4,
+      "director": "史慧、刘昀",
+      "crew": "中央广播电视总台；《中国探月》制作团队",
+      "tagline": "回看绕、落、回，理解探月工程怎样一步步推进。",
+      "synopsis": "影片回顾中国探月工程二十年的发展，以重大节点串联任务历程，并通过具有代表性的故事解释技术与组织上的挑战。从月球背面的通信，到月面活动和采样返回，复杂任务被拆成观众能够跟随的问题。\n\n节目不仅关心一次发射的结果，也关心长期积累如何支撑下一步探索。可以将它与《神奇的嫦娥五号》对照观看：前者提供工程发展的整体视角，后者聚焦一次任务的具体过程，从两个尺度理解航天探索。",
+      "highlights": [
+        "以重大节点建立探月工程的整体时间线。",
+        "关注月背通信、月面工作与采样返回等问题。",
+        "与单次任务纪录片对照，比较叙事尺度。"
+      ],
+      "chapters": [
+        "第一集",
+        "第二集",
+        "第三集",
+        "第四集"
+      ],
+      "sources": [
+        {
+          "label": "央视节目官网",
+          "url": "https://tv.cctv.com/2024/04/22/VIDA0GtCvQzF4ZHPQtjnX3Gw240422.shtml"
+        },
+        {
+          "label": "百度百科 · 2024 年版主创资料",
+          "url": "https://wapbaike.baidu.com/item/中国探月/64339378"
+        },
+        {
+          "label": "央视完整第一集（时长核验）",
+          "url": "https://tv.cctv.com/2024/04/22/VIDEJSu81rZxGhgTHS4kt9qN240422.shtml"
+        }
+      ],
+      "styles": [
+        "纪实跟拍",
+        "夜景光影"
+      ]
+    },
+    {
+      "posterId": 7,
+      "artworkKind": "主题插画",
+      "id": 118,
+      "title": "绿色星球",
+      "originalTitle": "The Green Planet",
+      "category": "自然",
+      "year": 2022,
+      "region": "英国",
+      "language": "英语",
+      "duration": "约 58 分钟 / 集",
+      "episodes": 5,
+      "director": "分集导演制（导演名单待核实）",
+      "crew": "BBC 自然历史制作团队；系列制片人：Rupert Barrington；执行制片人：Michael Gunton；主持与讲述：David Attenborough",
+      "tagline": "把时间放慢，看见植物世界的竞争与合作。",
+      "synopsis": "植物看似静止，实际上也在争夺光、水和生长空间。这部系列把植物放在观察中心，通过延时、实时和微距等拍摄方式，将不易被肉眼连续察觉的变化呈现在屏幕上，带领观众重新理解身边的绿色生命。\n\n热带森林、水域、季节性环境与沙漠，为植物提出不同的生存题目。观看时可以比较它们如何利用时机、应对资源不足，也可以留意拍摄技术怎样改变我们感知时间的方式，从熟悉的叶片与花朵中看见新的故事。",
+      "highlights": [
+        "从植物视角观察竞争、适应与环境关系。",
+        "理解延时和微距摄影如何呈现缓慢变化。",
+        "比较热带、水域、季节与沙漠环境。"
+      ],
+      "chapters": [
+        "Tropical Worlds · 热带世界",
+        "Water Worlds · 水生世界",
+        "Seasonal Worlds · 季节世界",
+        "Desert Worlds · 沙漠世界"
+      ],
+      "sources": [
+        {
+          "label": "BBC Earth 节目资料",
+          "url": "https://www.bbcearth.com/shows/the-green-planet"
+        },
+        {
+          "label": "PBS · 主创制作资料",
+          "url": "https://www.pbs.org/about/about-pbs/blogs/news/pbs-announces-the-green-planet/"
+        }
+      ],
+      "styles": [
+        "风光长镜",
+        "细节特写"
+      ]
+    }
+  ],
+  "reviews": [
+    {
+      "filmId": 101,
+      "viewerId": "DEMO1",
+      "content": 4,
+      "image": 5,
+      "narration": 5,
+      "comment": "鲸群与深海画面很有层次，想再了解一下拍摄过程。",
+      "isSample": true
+    },
+    {
+      "filmId": 101,
+      "viewerId": "DEMO20",
+      "content": 4,
+      "image": 4,
+      "narration": 5,
+      "comment": "想在看完分集目录后，再选一集深入观看。",
+      "isSample": true
+    },
+    {
+      "filmId": 102,
+      "viewerId": "DEMO2",
+      "content": 5,
+      "image": 5,
+      "narration": 4,
+      "comment": "贴近动物活动范围的镜头，让生存故事更容易理解。",
+      "isSample": true
+    },
+    {
+      "filmId": 103,
+      "viewerId": "DEMO3",
+      "content": 5,
+      "image": 5,
+      "narration": 4,
+      "comment": "把不同生态系统放在一起看，比单独记住一种动物更有收获。",
+      "isSample": true
+    },
+    {
+      "filmId": 103,
+      "viewerId": "DEMO20",
+      "content": 4,
+      "image": 4,
+      "narration": 5,
+      "comment": "想在看完分集目录后，再选一集深入观看。",
+      "isSample": true
+    },
+    {
+      "filmId": 104,
+      "viewerId": "DEMO4",
+      "content": 4,
+      "image": 5,
+      "narration": 4,
+      "comment": "原来高山也是冰冻世界的一部分，这个观察角度很有意思。",
+      "isSample": true
+    },
+    {
+      "filmId": 105,
+      "viewerId": "DEMO5",
+      "content": 5,
+      "image": 5,
+      "narration": 5,
+      "comment": "从空中看河流和城市，地理关系一下子清楚了。",
+      "isSample": true
+    },
+    {
+      "filmId": 105,
+      "viewerId": "DEMO20",
+      "content": 4,
+      "image": 4,
+      "narration": 5,
+      "comment": "想在看完分集目录后，再选一集深入观看。",
+      "isSample": true
+    },
+    {
+      "filmId": 106,
+      "viewerId": "DEMO6",
+      "content": 5,
+      "image": 5,
+      "narration": 4,
+      "comment": "人物生活让高原不只是风景，花絮也值得看。",
+      "isSample": true
+    },
+    {
+      "filmId": 107,
+      "viewerId": "DEMO7",
+      "content": 4,
+      "image": 5,
+      "narration": 4,
+      "comment": "最打动我的是食物背后的劳动与家庭。",
+      "isSample": true
+    },
+    {
+      "filmId": 107,
+      "viewerId": "DEMO20",
+      "content": 4,
+      "image": 4,
+      "narration": 5,
+      "comment": "想在看完分集目录后，再选一集深入观看。",
+      "isSample": true
+    },
+    {
+      "filmId": 108,
+      "viewerId": "DEMO8",
+      "content": 5,
+      "image": 5,
+      "narration": 4,
+      "comment": "三集连起来看，能感受到地方风味和传承的联系。",
+      "isSample": true
+    },
+    {
+      "filmId": 109,
+      "viewerId": "DEMO9",
+      "content": 5,
+      "image": 5,
+      "narration": 5,
+      "comment": "同一片叶子，在不同地方成为不同的生活方式。",
+      "isSample": true
+    },
+    {
+      "filmId": 109,
+      "viewerId": "DEMO20",
+      "content": 4,
+      "image": 4,
+      "narration": 5,
+      "comment": "想在看完分集目录后，再选一集深入观看。",
+      "isSample": true
+    },
+    {
+      "filmId": 110,
+      "viewerId": "DEMO10",
+      "content": 4,
+      "image": 5,
+      "narration": 4,
+      "comment": "沿着地理通道理解历史，比孤立记事件更直观。",
+      "isSample": true
+    },
+    {
+      "filmId": 111,
+      "viewerId": "DEMO11",
+      "content": 5,
+      "image": 5,
+      "narration": 4,
+      "comment": "五分钟认识一件文物，很适合每天看一集。",
+      "isSample": true
+    },
+    {
+      "filmId": 111,
+      "viewerId": "DEMO20",
+      "content": 4,
+      "image": 4,
+      "narration": 5,
+      "comment": "想在看完分集目录后，再选一集深入观看。",
+      "isSample": true
+    },
+    {
+      "filmId": 112,
+      "viewerId": "DEMO12",
+      "content": 5,
+      "image": 5,
+      "narration": 4,
+      "comment": "修复细节和工作者的日常放在一起，很耐看。",
+      "isSample": true
+    },
+    {
+      "filmId": 113,
+      "viewerId": "DEMO13",
+      "content": 4,
+      "image": 5,
+      "narration": 5,
+      "comment": "许多普通人的第一次，也让人想起自己的经历。",
+      "isSample": true
+    },
+    {
+      "filmId": 113,
+      "viewerId": "DEMO20",
+      "content": 4,
+      "image": 4,
+      "narration": 5,
+      "comment": "想在看完分集目录后，再选一集深入观看。",
+      "isSample": true
+    },
+    {
+      "filmId": 114,
+      "viewerId": "DEMO14",
+      "content": 5,
+      "image": 5,
+      "narration": 4,
+      "comment": "从私人书信进入历史，人物变得具体了。",
+      "isSample": true
+    },
+    {
+      "filmId": 115,
+      "viewerId": "DEMO15",
+      "content": 5,
+      "image": 5,
+      "narration": 4,
+      "comment": "施工难题和图形解释结合起来，比较容易理解。",
+      "isSample": true
+    },
+    {
+      "filmId": 115,
+      "viewerId": "DEMO20",
+      "content": 4,
+      "image": 4,
+      "narration": 5,
+      "comment": "想在看完分集目录后，再选一集深入观看。",
+      "isSample": true
+    },
+    {
+      "filmId": 116,
+      "viewerId": "DEMO16",
+      "content": 4,
+      "image": 5,
+      "narration": 4,
+      "comment": "任务流程清楚，适合先建立航天知识的框架。",
+      "isSample": true
+    }
+  ],
+  "legacyFilms": [
+    {
+      "director": "",
+      "crew": "",
+      "posterId": 1,
+      "id": 1,
+      "title": "蓝色星球",
+      "category": "自然",
+      "episodes": 6,
+      "synopsis": "从阳光照亮的浅海到幽暗的深海，跟随鲸群的迁徙，观察海洋生命如何利用潮汐和洋流。",
+      "styles": [
+        "风光长镜",
+        "细节特写"
+      ]
+    },
+    {
+      "director": "",
+      "crew": "",
+      "posterId": 2,
+      "id": 2,
+      "title": "沙海来信",
+      "category": "人文",
+      "episodes": 4,
+      "synopsis": "沿着穿越沙丘的旧商道，记录旅人、牧民和绿洲居民如何在沙漠中辨认方向、寻找水源。",
+      "styles": [
+        "风光长镜",
+        "纪实跟拍"
+      ]
+    },
+    {
+      "director": "",
+      "crew": "",
+      "posterId": 3,
+      "id": 3,
+      "title": "一把泥土",
+      "category": "人文",
+      "episodes": 5,
+      "synopsis": "走进陶艺工坊，从选土、拉坯到烧制，观察一件日用器皿背后的经验与耐心。",
+      "styles": [
+        "纪实跟拍",
+        "细节特写"
+      ]
+    },
+    {
+      "director": "",
+      "crew": "",
+      "posterId": 4,
+      "id": 4,
+      "title": "雪山之上",
+      "category": "自然",
+      "episodes": 6,
+      "synopsis": "摄影团队随巡护员进入高山，在岩壁与积雪之间寻找雪豹活动的痕迹。",
+      "styles": [
+        "风光长镜",
+        "纪实跟拍"
+      ]
+    },
+    {
+      "director": "",
+      "crew": "",
+      "posterId": 5,
+      "id": 5,
+      "title": "追星的人",
+      "category": "科学",
+      "episodes": 5,
+      "synopsis": "跟随天文观测员度过山顶的几个夜晚，了解望远镜怎样把微弱星光记录下来。",
+      "styles": [
+        "夜景光影",
+        "纪实跟拍"
+      ]
+    },
+    {
+      "director": "",
+      "crew": "",
+      "posterId": 6,
+      "id": 6,
+      "title": "雨林深处",
+      "category": "自然",
+      "episodes": 6,
+      "synopsis": "从潮湿的林地到高处的树冠，记录热带雨林居民在雨季里的日常。",
+      "styles": [
+        "风光长镜",
+        "细节特写"
+      ]
+    },
+    {
+      "director": "",
+      "crew": "",
+      "posterId": 7,
+      "id": 7,
+      "title": "湿地往事",
+      "category": "自然",
+      "episodes": 5,
+      "synopsis": "观察河流和候鸟如何随季节变化，走访在湿地边生活的人们。",
+      "styles": [
+        "风光长镜",
+        "纪实跟拍"
+      ]
+    },
+    {
+      "director": "",
+      "crew": "",
+      "posterId": 8,
+      "id": 8,
+      "title": "城市夜行",
+      "category": "人文",
+      "episodes": 4,
+      "synopsis": "沿着夜班公交与灯火下的街道，认识午夜过后仍在工作的人。",
+      "styles": [
+        "夜景光影",
+        "纪实跟拍"
+      ]
+    },
+    {
+      "director": "",
+      "crew": "",
+      "posterId": 9,
+      "id": 9,
+      "title": "冰川边缘",
+      "category": "科学",
+      "episodes": 5,
+      "synopsis": "跟随野外测量队记录冰川的变化，了解他们如何用影像和数据追踪冰线。",
+      "styles": [
+        "风光长镜",
+        "纪实跟拍"
+      ]
+    },
+    {
+      "director": "",
+      "crew": "",
+      "posterId": 10,
+      "id": 10,
+      "title": "山间茶事",
+      "category": "人文",
+      "episodes": 4,
+      "synopsis": "在茶山的一季采收中，记录采摘、炒制与品茶的日常。",
+      "styles": [
+        "纪实跟拍",
+        "细节特写"
+      ]
+    }
+  ],
+  "legacyReviews": [
+    {
+      "filmId": 1,
+      "viewerId": "U101",
+      "content": 5,
+      "image": 5,
+      "narration": 5,
+      "comment": "鲸群转身的那一段很难忘，讲解也清楚。"
+    },
+    {
+      "filmId": 1,
+      "viewerId": "U108",
+      "content": 5,
+      "image": 5,
+      "narration": 4,
+      "comment": "浅海到深海的变化让人印象很深。"
+    },
+    {
+      "filmId": 1,
+      "viewerId": "U112",
+      "content": 4,
+      "image": 5,
+      "narration": 4,
+      "comment": "水下画面很细腻，希望能多讲一点洋流。"
+    },
+    {
+      "filmId": 2,
+      "viewerId": "U105",
+      "content": 4,
+      "image": 5,
+      "narration": 4,
+      "comment": "沙丘上的脚印和风声拍得很有现场感。"
+    },
+    {
+      "filmId": 2,
+      "viewerId": "U108",
+      "content": 4,
+      "image": 4,
+      "narration": 4,
+      "comment": "听完牧民辨认方向的故事，想再看一遍。"
+    },
+    {
+      "filmId": 3,
+      "viewerId": "U102",
+      "content": 5,
+      "image": 4,
+      "narration": 5,
+      "comment": "拉坯和烧制都拍到了，节奏很舒服。"
+    },
+    {
+      "filmId": 3,
+      "viewerId": "U106",
+      "content": 5,
+      "image": 4,
+      "narration": 4,
+      "comment": "几处手部特写特别有意思。"
+    },
+    {
+      "filmId": 4,
+      "viewerId": "U102",
+      "content": 5,
+      "image": 5,
+      "narration": 4,
+      "comment": "雪豹经过岩脊的长镜头很漂亮。"
+    },
+    {
+      "filmId": 4,
+      "viewerId": "U109",
+      "content": 4,
+      "image": 5,
+      "narration": 4,
+      "comment": "巡护员讲解如何找足迹的那段最有意思。"
+    },
+    {
+      "filmId": 5,
+      "viewerId": "U103",
+      "content": 4,
+      "image": 4,
+      "narration": 5,
+      "comment": "第一次看懂实地观测是怎么做的。"
+    },
+    {
+      "filmId": 5,
+      "viewerId": "U107",
+      "content": 4,
+      "image": 5,
+      "narration": 5,
+      "comment": "星空镜头很美，旁白没有抢画面。"
+    },
+    {
+      "filmId": 6,
+      "viewerId": "U104",
+      "content": 4,
+      "image": 5,
+      "narration": 4,
+      "comment": "雨林的声音很丰富，分层拍摄也很直观。"
+    },
+    {
+      "filmId": 7,
+      "viewerId": "U110",
+      "content": 4,
+      "image": 4,
+      "narration": 4,
+      "comment": "候鸟出现得很自然，和人的故事连在一起。"
+    },
+    {
+      "filmId": 8,
+      "viewerId": "U111",
+      "content": 4,
+      "image": 4,
+      "narration": 3,
+      "comment": "夜班司机的故事很平实。"
+    },
+    {
+      "filmId": 9,
+      "viewerId": "U115",
+      "content": 4,
+      "image": 5,
+      "narration": 5,
+      "comment": "看完对冰川测量有了更清楚的认识。"
+    }
+  ]
+}

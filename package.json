@@ -1,0 +1,12 @@
+{
+  "name": "yingchang",
+  "private": true,
+  "scripts": {
+    "start": "node web/scripts/serve.mjs --open",
+    "dev": "node web/scripts/serve.mjs",
+    "test": "npm --prefix web test",
+    "test:cpp": "node cpp/test.mjs",
+    "debug:cpp": "node web/scripts/debug-core.mjs",
+    "build:core": "node web/scripts/build-core.mjs"
+  }
+}

@@ -1,5 +1,8 @@
 web/data/
 web/dist/
+data/
+cpp/build/
+output/
 **/node_modules/
 cpp/documentaries.txt
 cpp/reviews.txt
@@ -8,3 +11,5 @@ cpp/reviews.txt
 *.obj
 *.pdb
 .env*
+runtime/
+releases/

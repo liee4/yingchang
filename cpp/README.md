@@ -1,39 +1,36 @@
-# 纪录片放映周评价与推荐系统
+# 映场 C++ 核心
 
-程序使用 C++17。首页可进入管理员或观众菜单。管理员可维护片目、查看评价和统计评分分布。观众可查询、评分、复评和查看推荐榜及分类榜。
+C++17 负责片目、评价、输入校验、查询、评分、排序、统计与统一数据文件。常驻 `--stdio` 模式为网页服务；不带该参数是调试菜单。两种模式使用同一核心程序、同一根目录 `data` 和同一独占锁。
 
-## 编译和运行
+正常使用从项目根目录启动网页，启动器会自动编译。可在根目录运行 `npm run build:core` 单独编译，运行 `npm run debug:cpp` 进入菜单。编译结果缓存于 `cpp/build/`，文件名包含源码摘要，源码改变后自动生成新版本。
 
-在源码所在目录打开 Visual Studio 的 **Developer PowerShell**，执行：
+## 手动编译
 
-```powershell
-cl /nologo /std:c++17 /EHsc /utf-8 /W4 main.cpp documentary_catalog.cpp reviews.cpp /Fe:documentary.exe
-.\documentary.exe
+在本目录用 GCC 执行（Windows）：
+
+```sh
+g++ -std=c++17 -Wall -Wextra -pedantic -finput-charset=UTF-8 -fexec-charset=UTF-8 main.cpp documentary_catalog.cpp reviews.cpp record_codec.cpp data_store.cpp core_service.cpp -o documentary.exe -lshell32
 ```
 
-使用 GCC 时可执行：
+Linux/macOS 去掉 `-lshell32` 并将输出名改为 `documentary`。Windows 的原生宽字符参数用于支持中文目录。Visual Studio 开发环境也可将 `CXX` 设为 `cl`，使用 Node 编译脚本，它会选择对应参数并链接 Shell32。
 
-```bash
-g++ -std=c++17 -Wall -Wextra -pedantic main.cpp documentary_catalog.cpp reviews.cpp -o documentary
-./documentary
-```
+手动编译出的程序放在 `cpp` 下时，默认数据目录仍为项目根目录 `data`。也可显式指定 `--data-dir` 或 `YINGCHANG_DATA_DIR`。不要在网页运行时启动调试终端写相同目录。
 
-## 审核步骤
+## 业务与文件
 
-1. 从首页选择管理员。演示账号为 `admin`，密码为 `admin123`。输入密码时显示星号，连续输错三次返回首页。
-2. 在管理员菜单新增一部片目。修改时输入原片号，再填写六项资料。删除时输入片号并确认，程序会一并删除相关评价。
-3. 返回首页进入观众菜单。按完整片名可查看所有同名片目及逐条评价。评分时输入片号和观众编号，三项评分均为 1 到 5 的整数。同一观众对同一片目复评会替换原记录。
-4. 查看推荐榜。每条评价的综合分为 `(2 × 内容分 + 画面分 + 讲解分) ÷ 4`。影片按综合分平均值排序，同分依次按评价人数降序、片号升序排列，最多显示 10 部。
-5. 退出后从同一目录重启，核对片目及评价已恢复。
-6. 在观众菜单选择 `4. 查看分类榜`，按内容、画面或讲解的单项平均分查看前 10 部。沿用推荐榜的同分规则，未评分片目不参与排名。
-7. 在管理员菜单选择 `7. 自定义分数段统计`。输入 `3 4`，系统会按每条评价的综合分统计 `[1, 3)`、`[3, 4)`、`[4, 5]` 三段的人数。分界点严格递增，可输入小数，且必须大于 1、小于 5。等于分界点的评分计入后一段，5 分计入最后一段。未评分片目各段显示 0。
+- `documentary_catalog.*`：片目结构与增删改查，保留完整扩展信息。
+- `reviews.*`：评价结构、复评、加权综合分、前十排名、分数段计数。
+- `record_codec.*`：整数、文本、评分、扩展字段和链接校验；UTF-8 JSON 编解码。
+- `data_store.*`：固定目录、系统级独占锁、旧数据迁移、备份、双文件事务与启动恢复。
+- `core_service.*`：标准输入输出协议、查询和网页所需结果。
+- `main.cpp`：启动模式与调试菜单。
 
-片目编号为唯一整数，修改片目时沿用原编号。片名必填，集数为正整数。类别、导演、主创、简介和短评可留空。片目与评价分别保存到当前工作目录的 UTF-8 文本文件 `documentaries.txt` 和 `reviews.txt`。同一数据目录供一个程序实例使用。
+`DocumentaryCatalog` 和 `Reviews` 在服务中使用暂存模式：先对副本执行全部校验和操作，再提交两个文本文件，提交成功后才公布新内存状态。调试菜单也使用这些业务类及同一文件格式。片号唯一且不可通过修改请求重分配；评价用“片号 + 去除首尾空白的观众编号”定位，编号区分大小写。
 
-## 代码结构
+新文件每行一条 JSON，对中文、换行、引号与反斜线安全转义。可兼容旧引号分隔文本与 UTF-8 BOM。输入无效时旧评价不变；文件异常时保留原文件并报错。标准输出只写接口 JSON；迁移与诊断信息写标准错误。
 
-- `documentary_catalog.h` 定义片目结构体和片目管理接口。
-- `documentary_catalog.cpp` 负责片目查找、维护和读写。
-- `reviews.h` 与 `reviews.cpp` 负责评价记录、复评、榜单计算和分数段计数。
-- `text_file.h` 提供共用的文本读取和保存逻辑。
-- `main.cpp` 负责终端菜单、登录、输入和结果显示。
+## 测试
+
+在本目录执行 `node test.mjs`，或在根目录执行 `npm run test:cpp`。需要 Node.js 和 GCC。测试覆盖业务类、终端菜单、复评、并列排序、非法输入、文件损坏、Windows 文件占用与恢复。网页完整集成测试在根目录执行 `npm test`。
+
+第三方 JSON 库只用于 JSON 编解码，完整源码与 MIT 许可随项目保留在 `third_party/`；课程业务逻辑均在上述项目代码中。

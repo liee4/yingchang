@@ -18,6 +18,7 @@ struct Review {
     int image = 0;
     int narration = 0;
     std::string comment;
+    bool isSample = false;
 };
 
 struct RankingEntry {
@@ -29,8 +30,9 @@ struct RankingEntry {
 
 class Reviews {
 public:
-    explicit Reviews(std::filesystem::path path);
-    void load(const DocumentaryCatalog& catalog);
+    explicit Reviews(std::filesystem::path path, bool persistChanges = true);
+    // Return the number of orphaned reviews recovered after an interrupted delete.
+    std::size_t load(const DocumentaryCatalog& catalog);
     void submit(const Review& review, const DocumentaryCatalog& catalog);
     void removeDocumentary(int id, DocumentaryCatalog& catalog);
     const std::vector<Review>& all() const;
@@ -38,10 +40,12 @@ public:
 private:
     std::filesystem::path path_;
     std::vector<Review> reviews_;
+    bool persistChanges_;
 };
 
 bool isValidScore(int score);
 long double reviewScore(const Review& review);
+std::string scoreFormula();
 
 using ScoreFunction = long double (*)(const Review&);
 std::vector<RankingEntry> buildRanking(const DocumentaryCatalog& catalog, const Reviews& reviews,

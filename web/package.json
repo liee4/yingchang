@@ -7,6 +7,9 @@
     "dev": "node scripts/serve.mjs",
     "build": "node scripts/build.mjs && node scripts/prepare-sites-build.mjs",
     "preview": "node scripts/serve.mjs --dist",
+    "test": "node scripts/build-core.mjs && node --test tests/catalog.test.mjs tests/catalog-api.test.mjs tests/core-stdio.test.mjs tests/core-rule.test.mjs tests/accounts.test.mjs tests/completion.test.mjs",
+    "build:core": "node scripts/build-core.mjs",
+    "debug:cpp": "node scripts/debug-core.mjs",
     "test:sites": "node --test tests/sites-worker.test.mjs"
   }
 }

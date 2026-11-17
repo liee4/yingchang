@@ -1,6 +1,7 @@
 #include "documentary_catalog.h"
 #include "reviews.h"
 #include "text_file.h"
+#include "core_service.h"
 
 #include <algorithm>
 #include <cstdio>
@@ -170,7 +171,7 @@ bool editDocumentary(DocumentaryCatalog& catalog, bool adding)
         throw std::invalid_argument("该编号已存在。");
     }
     if (!adding) {
-        requireDocumentary(catalog, documentary.id);
+        documentary.details = requireDocumentary(catalog, documentary.id).details;
     }
     if (!readDocumentaryDetails(documentary)) {
         return false;
@@ -310,6 +311,7 @@ bool submitReview(const DocumentaryCatalog& catalog, Reviews& reviews)
     if (!readLine("观众编号：", review.viewerId)) {
         return false;
     }
+    review.viewerId = trimText(review.viewerId);
     if (isBlank(review.viewerId)) {
         throw std::invalid_argument("观众编号不能为空。");
     }
@@ -565,37 +567,37 @@ void showViewerMenu(const DocumentaryCatalog& catalog, Reviews& reviews)
 
 }  // namespace
 
-int main()
+int main(int argc, char** argv)
 {
-#ifdef _WIN32
-    SetConsoleOutputCP(CP_UTF8);
-    if (isConsoleInput()) {
-        _setmode(_fileno(stdin), _O_U16TEXT);
-    }
-#else
-    std::setlocale(LC_CTYPE, "");
-#endif
-
-    DocumentaryCatalog catalog("documentaries.txt");
-    Reviews reviews("reviews.txt");
     try {
+        const auto options = launchOptions(argc, argv);
+        DataDirectoryLock directoryLock(options.directory);
+        initializeStore(options);
+        if (options.stdio) return runCoreService(options);
+#ifdef _WIN32
+        SetConsoleOutputCP(CP_UTF8);
+        if (isConsoleInput()) _setmode(_fileno(stdin), _O_U16TEXT);
+#else
+        std::setlocale(LC_CTYPE, "");
+#endif
+        DocumentaryCatalog catalog(options.directory / "documentaries.txt");
+        Reviews reviews(options.directory / "reviews.txt");
         catalog.load();
-        reviews.load(catalog);
+        const auto cleaned = reviews.load(catalog);
+        if (cleaned > 0) std::cout << "恢复提示：已清理 " << cleaned << " 条关联片目不存在的评价。\n";
         runMenu("\n纪录片放映周 · 首页\n1. 管理员\n2. 观众\n0. 退出\n", [&](int choice) {
             switch (choice) {
             case 1:
-                if (login()) {
-                    showAdminMenu(catalog, reviews);
-                }
+                if (login()) showAdminMenu(catalog, reviews);
                 break;
             case 2: showViewerMenu(catalog, reviews); break;
             default: std::cout << "请输入菜单中列出的选项。\n"; break;
             }
             return true;
         });
+        return 0;
     } catch (const std::exception& error) {
         std::cerr << error.what() << '\n';
         return 1;
     }
-    return 0;
 }

@@ -7,23 +7,30 @@
     <title>映场</title>
     <link rel="icon" type="image/webp" href="./icons/brand-mark.webp" />
     <link rel="stylesheet" href="./src/styles.css" />
+    <link rel="stylesheet" href="./src/experience.css" />
+    <link rel="stylesheet" href="./src/preferences.css" />
   </head>
   <body>
     <header class="site-header">
       <a class="brand" href="#/">
-        <img class="brand-mark" src="./icons/brand-mark.webp" width="25" height="14" alt="" />
-        <span class="brand-name">映场</span>
+        <img class="brand-wordmark" src="./icons/wordmark.svg" width="122" height="54" alt="映场" />
+        <span class="brand-subtitle">YING CHANG<small>纪录片放映周</small></span>
       </a>
       <nav class="navigation" aria-label="主导航" hidden>
         <a href="#/catalog" id="nav-catalog">片目</a>
         <a href="#/ranking" id="nav-ranking">榜单</a>
+        <a href="#/favorites" id="nav-favorites" hidden>收藏</a>
+        <a href="#/history" id="nav-history" hidden>历史</a>
+        <a href="#/admin" id="nav-admin" hidden>管理</a>
       </nav>
       <div class="header-actions">
         <div class="search" id="search" hidden>
           <span class="icon icon-search" aria-hidden="true"></span>
-          <input id="search-title" type="search" placeholder="搜索片名" aria-label="搜索片名" />
+          <input id="search-title" type="search" placeholder="片名 / 导演 / 关键词" aria-label="搜索影片、导演或关键词" maxlength="100" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="search-suggestions" aria-autocomplete="list" />
+          <button id="search-clear" type="button" aria-label="清空搜索" hidden>×</button>
+          <div id="search-suggestions" class="search-suggestions" role="listbox" aria-label="搜索建议" hidden></div>
         </div>
-        <button class="quiet-button role-exit" id="role-exit" type="button" hidden></button>
+        <details class="account-menu" id="account-menu" hidden><summary id="account-summary"></summary><div class="account-dropdown"><p id="account-role"></p><a href="#/account">我的账户与评价</a><a href="#/admin" id="account-admin" hidden>管理员后台</a><button id="logout" type="button">退出登录</button></div></details>
       </div>
     </header>
     <main class="content" id="content" tabindex="-1"></main>
